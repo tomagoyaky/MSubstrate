@@ -20,6 +20,7 @@
 
 namespace Cydia{
 
+	_extern void elfHook(const char *soname, const char *symbol, void *replace_func, void **old_func);
 	_extern void MSHookFunction(void *symbol, void *replace, void **result);
 }
 #endif /* HOOKER_H_ */

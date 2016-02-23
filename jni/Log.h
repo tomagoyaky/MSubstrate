@@ -29,6 +29,7 @@
 #define MSLogLevelError ANDROID_LOG_ERROR
 
 #define DEBUG 1
+#define EXE_PRINTF 1
 #ifndef LOG_TAG
 	# define LOG_TAG "tomagoyaky_substrate"
 #endif
@@ -60,6 +61,7 @@
 #endif
 
 #define MSLog(level, fmt,...) do { \
+	printf("[%12s] " fmt "\n", __FUNCTION__,##__VA_ARGS__); \
     __android_log_print(level, LOG_TAG, "[%s]" fmt, __FUNCTION__,##__VA_ARGS__); \
 } while (false)
 #endif//SUBSTRATE_LOG_HPP

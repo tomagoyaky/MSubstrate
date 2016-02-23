@@ -27,7 +27,7 @@
 #include <stdio.h>
 
 _extern bool MSDebug;
-bool MSDebug = false;
+bool MSDebug = 1;
 
 static char _MSHexChar(uint8_t value) {
     return value < 0x20 || value >= 0x80 ? '.' : value;
