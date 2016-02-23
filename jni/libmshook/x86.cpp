@@ -15,7 +15,7 @@ static size_t MSGetInstructionWidthIntel(void *start) {
 
 void x86::SubstrateHookFunctionx86(SubstrateProcessRef process, void *symbol, void *replace, void **result){
     if (MSDebug)
-        MSLog(MSLogLevelNotice, "MSHookFunction(%p, %p, %p)", symbol, replace, result);
+        MSLog(MSLogLevelNotice, "SubstrateHookFunctionx86(process:%p, symbol:%p, replace:%p, result:%p)", process, symbol, replace, result);
     if (symbol == NULL)
         return;
 

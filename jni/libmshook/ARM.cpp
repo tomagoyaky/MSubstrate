@@ -12,18 +12,14 @@ void ARM::SubstrateHookFunctionARM(SubstrateProcessRef process, void *symbol, vo
     if (symbol == NULL)
         return;
 
-	LOGD("%d", __LINE__);
     uint32_t *area(reinterpret_cast<uint32_t *>(symbol));
     uint32_t *arm(area);
 
     const size_t used(8);
 
-	LOGD("%d", __LINE__);
     uint32_t backup[used / sizeof(uint32_t)] = {arm[0], arm[1]};
 
-	LOGD("%d", __LINE__);
     if (MSDebug) {
-    	LOGD("%d", __LINE__);
         char name[16];
         sprintf(name, "%p", area);
         MSLogHexEx(area, used + sizeof(uint32_t), 4, name);
